@@ -8,13 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Clima App</h1>
-        <div id="weather-info">
-            <p>Ubicación: <span id="location"></span></p>
-            <p>Temperatura: <span id="temperature"></span> °C</p>
-            <p>Descripción: <span id="description"></span></p>
+            <h1>Clima App</h1>
+            <div id="weather-info">
+                <p class="lugar">Ubicación: <span id="location"></span></p>
+                <img src="" id="icon" alt="icon" >
+                <h2><span id="temperature"></span> °C</h2>
+                <p>MIN: <span id="min"></span> °C</p>
+                <p>MAX: <span id="max"></span> °C</p>
+                <p>Descripción: <span id="description"></span></p>
+            </div>
+            <br>
+            <div class="formulario" id="buscar-form">    
+                <input type="text" id="ciudad-input" placeholder="Ingrese el nombre de la ciudad">
+                <button id="buscar-btn">Buscar</button>
+            </div>
         </div>
-    </div>
-    <script src="index.js"></script>
-</body>
-</html>
+        <script src="index.js"></script>
+    </body>
+    </html>
+    
