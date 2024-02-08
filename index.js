@@ -45,7 +45,6 @@ window.addEventListener('load', () => {
                 }
             }
 
-
         function loadSearchHistory() {
             const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
             const historyList = document.getElementById('search-history');
@@ -55,6 +54,18 @@ window.addEventListener('load', () => {
             searchHistory.forEach(info => {
                 const listItem = document.createElement('li');
                 listItem.textContent = info.city + " " + info.temperature + " °C";
+                
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Eliminar';
+                deleteButton.classList.add('delete-button');
+
+                
+                deleteButton.addEventListener('click', () => {
+                    removeFromSearchHistory(info.city);
+                    loadSearchHistory(); 
+                });
+                
+                listItem.appendChild(deleteButton);
                 historyList.appendChild(listItem);
             });
     }
@@ -65,6 +76,21 @@ window.addEventListener('load', () => {
                 searchHistory.push(info);
                 localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
                 loadSearchHistory();
+            }
+        }
+
+        function removeFromSearchHistory(city) {
+            const historyList = document.getElementById('search-history');
+            const listItemToDelete = Array.from(historyList.children).find(item => item.textContent.includes(city));
+            if (listItemToDelete) {
+                listItemToDelete.remove();
+            }
+
+            let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+            const index = searchHistory.findIndex(item => item.city === city);
+            if (index !== -1) {
+                searchHistory.splice(index, 1);
+                localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
             }
         }
 
