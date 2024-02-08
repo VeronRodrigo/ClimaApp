@@ -3,18 +3,74 @@ body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
+    color: #FFF;
+    background:
+linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
+
+linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
+background-color: #232927;
+background-size: 100px 100px;
+}
+.pag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
 }
 
+li{
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-image: linear-gradient(
+        0deg,
+        hsl(211deg 37% 49%) 0%,
+        hsl(209deg 36% 51%) 4%,
+        hsl(207deg 36% 53%) 8%,
+        hsl(206deg 37% 55%) 14%,
+        hsl(204deg 37% 58%) 21%,
+        hsl(202deg 37% 60%) 30%,
+        hsl(200deg 37% 62%) 41%,
+        hsl(198deg 37% 64%) 52%,
+        hsl(196deg 37% 67%) 64%,
+        hsl(195deg 37% 69%) 74%,
+        hsl(193deg 37% 71%) 82%,
+        hsl(191deg 37% 74%) 88%,
+        hsl(189deg 36% 76%) 93%,
+        hsl(187deg 35% 79%) 97%,
+        hsl(186deg 34% 82%) 100%
+    );
+    max-width: 600px;
+    margin: 2% auto;
+    padding: 30px 50px ;
+    text-align: center;
+    border-radius: 9px;
+
+}
 .cuerpo {
     display: flex;
     flex-direction: column;
 }
 .container {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    background-color: #4F7CAC;
+    background-image: linear-gradient(
+        185deg,
+        hsl(211deg 37% 49%) 0%,
+        hsl(198deg 37% 64%) 52%,
+        hsl(186deg 34% 82%) 100%
+    );
     max-width: 600px;
-    margin: 5% auto ;
-    padding: 20px 20px 50px;
+    margin: 2%;
+    padding: 50px 60px;
     text-align: center;
     border-radius: 9px;
 }
@@ -76,4 +132,12 @@ button  {
 }
 button:hover {
     width: 50%;
+}
+
+@media screen and (max-width: 700px) {
+    .pag{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
 }
